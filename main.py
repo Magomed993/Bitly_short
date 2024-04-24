@@ -52,7 +52,7 @@ if __name__ == '__main__':
     user_parse = urlparse(args.name)
     url_merge = f'{user_parse.scheme}://{user_parse.netloc}/{user_parse.path}'
     user_merge_net_path = '{0}{1}'.format(user_parse.netloc, user_parse.path)
-    bitly_token = os.getenv('BITLY_TOKEN')
+    bitly_token = os.environ['BITLY_TOKEN']
     try:
         if is_bitlink(bitly_token, user_merge_net_path):
             print(count_clicks(bitly_token, user_merge_net_path))
